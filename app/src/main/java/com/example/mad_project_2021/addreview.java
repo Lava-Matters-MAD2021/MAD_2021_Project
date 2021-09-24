@@ -1,4 +1,4 @@
- package com.example.mad_project_2021;
+package com.example.mad_project_2021;
 import android.widget.Toast;
 import android.os.Bundle;
 import android.view.View;
@@ -20,7 +20,7 @@ public class addreview extends AppCompatActivity {
     EditText txtID, txtName, txtAdd, txtrev, txtsug;
     Button btnsave, btnshow, btnupdate, btndelete;
     Customer customer;
-    DatabaseReference reff;
+    DatabaseReference dbref;
 
 
     @Override
@@ -40,7 +40,7 @@ public class addreview extends AppCompatActivity {
         btndelete = (Button) findViewById(R.id.btndelete);
 
         customer = new Customer();
-        reff = FirebaseDatabase.getInstance().getReference().child("Customer");
+        dbref = FirebaseDatabase.getInstance().getReference().child("Customer");
         //insert
         btnsave.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -49,18 +49,19 @@ public class addreview extends AppCompatActivity {
                 customer.setAddress(txtAdd.getText().toString().trim());
                 customer.setReview(txtrev.getText().toString().trim());
                 customer.setSuggestion(txtsug.getText().toString().trim());
-                reff.push().setValue(customer);
-                Toast.makeText(addreview.this,
-                        "review details added successfully", Toast.LENGTH_LONG).show();
+
+                dbref.push().setValue(customer);
+                Toast.makeText(getApplicationContext(),"data inserted successfully",Toast.LENGTH_SHORT).show();
             }
 
         });
+
         //retrieve
         btnshow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                reff = FirebaseDatabase.getInstance().getReference().child("Customer").child("customer1");
-                reff.addValueEventListener(new ValueEventListener() {
+                dbref = FirebaseDatabase.getInstance().getReference().child("Customer").child("customer2");
+                dbref.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         String customerID = dataSnapshot.child("customerID").getValue().toString();
@@ -139,11 +140,10 @@ public class addreview extends AppCompatActivity {
 
             }
         });
-                    }
+    }
 
 
-            }
-
+}
 
 
 
