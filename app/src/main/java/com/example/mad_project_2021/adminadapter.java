@@ -4,8 +4,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,10 +15,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.FirebaseDatabase;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
 
 import org.jetbrains.annotations.NotNull;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -48,7 +56,62 @@ public class adminadapter extends FirebaseRecyclerAdapter<model,adminadapter.myv
                         .setExpanded(true,1500)
                         .create();
 
+                //dialogPlus.show();
+
+                //call to popup window to added data
+
+                View view = dialogPlus.getHolderView();
+
+                EditText txtBookname = view.findViewById(R.id.txtBookname);
+                EditText txtDes = view.findViewById(R.id.txtDes);
+                EditText txtburl = view.findViewById(R.id.txtburl);
+                EditText txtauthor = view.findViewById(R.id.txtauthor);
+                EditText txtquantity = view.findViewById(R.id.txtquantity);
+                EditText txtprice = view.findViewById(R.id.txtprice);
+
+                Button btnUpdate = view.findViewById(R.id.btnUpdate);
+
+                txtBookname.setText(model.getTitle());
+                txtDes.setText(model.getDescription());
+                txtburl.setText(model.getBurl());
+                txtauthor.setText(model.getAuthor());
+                txtquantity.setText(model.getQt());
+                txtprice.setText(model.getPrice());
+
                 dialogPlus.show();
+
+                //perform click operation in edit
+
+                btnUpdate.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Map<String,Object>map = new HashMap<>();
+                        map.put("title",txtBookname.getText().toString());
+                        map.put("description", txtDes.getText().toString());
+                        map.put("burl", txtburl.getText().toString());
+                        map.put("author", txtauthor.getText().toString());
+                        map.put("qt", txtquantity.getText().toString());
+                        map.put("price", txtprice.getText().toString());
+
+                        FirebaseDatabase.getInstance().getReference().child("Book List")
+                                .child(getRef(position).getKey()).updateChildren(map)
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void unused) {
+                                        Toast.makeText(holder.title.getContext(), "Data Updated Sussessfully", Toast.LENGTH_SHORT).show();
+                                        dialogPlus.dismiss();
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure( Exception e) {
+                                        Toast.makeText(holder.title.getContext(), "Error While Updating", Toast.LENGTH_SHORT).show();
+                                        dialogPlus.dismiss();
+                                    }
+                                });
+                    }
+                });
+
             }
         });
 
