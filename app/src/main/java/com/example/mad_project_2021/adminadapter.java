@@ -3,6 +3,7 @@ package com.example.mad_project_2021;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.orhanobut.dialogplus.DialogPlus;
+import com.orhanobut.dialogplus.ViewHolder;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -37,6 +40,18 @@ public class adminadapter extends FirebaseRecyclerAdapter<model,adminadapter.myv
                 .error(R.drawable.common_google_signin_btn_icon_dark_focused)
                 .into(holder.img);
 
+        holder.btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final DialogPlus dialogPlus = DialogPlus.newDialog(holder.img.getContext())
+                        .setContentHolder(new ViewHolder(R.layout.update_popup))
+                        .setExpanded(true,1500)
+                        .create();
+
+                dialogPlus.show();
+            }
+        });
+
     }
 
     @NonNull
@@ -53,6 +68,8 @@ public class adminadapter extends FirebaseRecyclerAdapter<model,adminadapter.myv
         CircleImageView img;
         TextView author,description,price, qt, title;
 
+        Button btnEdit,btnDelet;
+
         public myviewholder(@NonNull @NotNull View itemView) {
             super(itemView);
             img=(CircleImageView)itemView.findViewById(R.id.img1);
@@ -61,6 +78,9 @@ public class adminadapter extends FirebaseRecyclerAdapter<model,adminadapter.myv
             author=(TextView)itemView.findViewById(R.id.emailtext);
             qt=(TextView)itemView.findViewById(R.id.emailtext2);
             price=(TextView)itemView.findViewById(R.id.emailtext3);
+
+            btnEdit = (Button)itemView.findViewById(R.id.btnEdit);
+            btnDelet=(Button)itemView.findViewById(R.id.btnDelet);
         }
     }
 
