@@ -1,12 +1,28 @@
 <resources>
     <string name="app_name">MAD_Project_2021</string>
-    <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="description"> we are fall for met this girl on </string>
+    <string name="c">Add Your Preferred Book</string>
+    <string name="r">** ALL</string>
+    <string name="d"> MY the best of luck is the earth on the range of all</string>
+    <string name="f">LKR.1200</string>
+    <string name="b">CHECKOUT</string>
+    <string name="bn">descriptions of books AS your Taste</string>
+    <string name="s">ABOUT/VIEW MORE</string>
+    <string name="ts">These ar thr dsa  e fictional novels o the the THHE AND THas possible as soon</string>
+    <string name="v">view reviews and rate</string>
+    <string name="re">I have read this good and improved </string>
+    <string name="h">need more collections of book and nedd  the</string>
+    <string name="hj">add reviews</string>
+    <string name="l">1</string>
+    <string name="a">1</string>
+    <string name="m">LKR.895</string>
+    <string name="mj">LKR.1600</string>
+    <string name="add">Add reviews</string>
+    <string name="name">Enter name</string>
+    <string name="ps">Enter password</string>
+    <string name="cno">Enter contact Number</string>
+    <string name="rev">Add Review</string>
+    <string name="su">SUBMIT</string>
+    <string name="up">UPDATE</string>
+    <string name="de">Delete</string>
 </resources>
