@@ -4,18 +4,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.SearchView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class adminviewpage extends AppCompatActivity {
 
     RecyclerView rv;
     adminadapter adapter;
+
+    FloatingActionButton floatingActionButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +35,14 @@ public class adminviewpage extends AppCompatActivity {
                         .build();
         adapter=new adminadapter(options);
         rv.setAdapter(adapter);
+
+        floatingActionButton=(FloatingActionButton)findViewById(R.id.floatingActionButton4);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),AddActivity.class));
+            }
+        });
     }
 
     @Override
