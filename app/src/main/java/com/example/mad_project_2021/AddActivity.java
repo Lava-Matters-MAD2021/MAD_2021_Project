@@ -6,6 +6,8 @@ import android.os.Bundle;
 
 public class AddActivity extends AppCompatActivity {
 
+    //register edit text and buttons
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

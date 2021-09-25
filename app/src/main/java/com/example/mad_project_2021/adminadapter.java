@@ -55,7 +55,7 @@ public class adminadapter extends FirebaseRecyclerAdapter<model,adminadapter.myv
             public void onClick(View v) {
                 final DialogPlus dialogPlus = DialogPlus.newDialog(holder.img.getContext())
                         .setContentHolder(new ViewHolder(R.layout.update_popup))
-                        .setExpanded(true,1500)
+                        .setExpanded(true,1550)
                         .create();
 
                 //dialogPlus.show();

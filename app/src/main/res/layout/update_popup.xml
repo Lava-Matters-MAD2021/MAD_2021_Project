@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="17sp"
+        android:textSize="15sp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:text="Book Name"/>
@@ -28,7 +28,7 @@
         android:layout_height="35dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:background="@drawable/rounded"
+        android:background="@drawable/rec"
         android:gravity="center"
         android:id="@+id/txtBookname"/>
 
@@ -36,17 +36,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:text="Description"/>
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="35dp"
+        android:layout_height="50dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:background="@drawable/rounded"
+        android:background="@drawable/rec"
         android:gravity="center"
         android:id="@+id/txtDes"/>
 
@@ -55,17 +55,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:text="Image Url"/>
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="35dp"
+        android:layout_height="50dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:background="@drawable/rounded"
+        android:background="@drawable/rec"
         android:gravity="center"
         android:id="@+id/txtburl"/>
 
@@ -73,7 +73,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:text="Author"/>
@@ -83,7 +83,7 @@
         android:layout_height="35dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:background="@drawable/rounded"
+        android:background="@drawable/rec"
         android:gravity="center"
         android:id="@+id/txtauthor"/>
 
@@ -91,7 +91,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:text="Quantity"/>
@@ -101,7 +101,7 @@
         android:layout_height="35dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:background="@drawable/rounded"
+        android:background="@drawable/rec"
         android:gravity="center"
         android:id="@+id/txtquantity"/>
 
@@ -109,7 +109,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:text="Price"/>
@@ -119,7 +119,7 @@
         android:layout_height="35dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:background="@drawable/rounded"
+        android:background="@drawable/rec"
         android:gravity="center"
         android:id="@+id/txtprice"/>
 
