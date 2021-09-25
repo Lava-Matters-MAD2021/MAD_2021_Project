@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
-public class addreview extends AppCompatActivity {
+public class profile extends AppCompatActivity {
     EditText txtID, txtName, txtAdd, txtrev, txtsug;
     Button btnsave, btnshow, btnupdate, btndelete;
     Customer customer;
@@ -29,8 +29,7 @@ public class addreview extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
-        setContentView(R.layout.activity_addreview);
+        setContentView(R.layout.activity_profile);
         txtID = (EditText) findViewById((R.id.txtID));
         txtName = (EditText) findViewById((R.id.txtName));
         txtAdd = (EditText) findViewById((R.id.txtAdd));
@@ -115,10 +114,10 @@ public class addreview extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(addreview.this, "updated successfully!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(profile.this, "updated successfully!", Toast.LENGTH_SHORT).show();
 
                 }else{
-                    Toast.makeText(addreview.this, "Updating Unsuccessful", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(profile.this, "Updating Unsuccessful", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -133,10 +132,10 @@ public class addreview extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(addreview.this, "customer deleted", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(profile.this, "customer deleted", Toast.LENGTH_SHORT).show();
 
                         } else {
-                            Toast.makeText(addreview.this, "Failed!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(profile.this, "Failed!", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
