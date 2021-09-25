@@ -1,5 +1,7 @@
 package com.example.mad_project_2021;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +37,7 @@ public class adminadapter extends FirebaseRecyclerAdapter<model,adminadapter.myv
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull @NotNull myviewholder holder, int position, @NonNull @NotNull model model)
+    protected void onBindViewHolder(@NonNull @NotNull myviewholder holder,final int position, @NonNull @NotNull model model)
     {
         holder.author.setText(model.getAuthor());
         holder.title.setText(model.getTitle());
@@ -112,6 +114,35 @@ public class adminadapter extends FirebaseRecyclerAdapter<model,adminadapter.myv
                     }
                 });
 
+            }
+        });
+
+        // delete operation
+
+        holder .btnDelet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(holder.title.getContext());
+                builder.setTitle("Are you sure?");
+                builder.setMessage("Deleted data can't be undo.");
+
+                builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        FirebaseDatabase.getInstance().getReference().child("Book List")
+                                .child(getRef(position).getKey()).removeValue();
+
+                    }
+                });
+
+                builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(holder.title.getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                
+                builder.show();
             }
         });
 
