@@ -1,12 +1,17 @@
 package com.example.myapplicationabc;
 
+import android.content.Intent;
+import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,12 +29,35 @@ public class profile extends AppCompatActivity {
     Button btnsave, btnshow, btnupdate, btndelete;
     Customer customer;
     DatabaseReference dbref;
+    Button btn;
+    ImageView imageView;
+    int SELECT_IMAGE_CODE=1;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+
+
+        btn=findViewById(R.id.btn);
+        imageView=findViewById(R.id.pickedImage);
+
+        btn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent= new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent,"Title"),SELECT_IMAGE_CODE);
+
+            }
+
+        });
+
+
+
         txtID = (EditText) findViewById((R.id.txtID));
         txtName = (EditText) findViewById((R.id.txtName));
         txtAdd = (EditText) findViewById((R.id.txtAdd));
@@ -40,6 +68,7 @@ public class profile extends AppCompatActivity {
         btnshow = (Button) findViewById(R.id.btnshow);
         btnupdate = (Button) findViewById(R.id.btnupdate);
         btndelete = (Button) findViewById(R.id.btndelete);
+
 
         customer = new Customer();
         dbref = FirebaseDatabase.getInstance().getReference().child("Customer");
@@ -57,6 +86,8 @@ public class profile extends AppCompatActivity {
             }
 
         });
+
+
 
         //retrieve
         btnshow.setOnClickListener(new View.OnClickListener() {
@@ -101,7 +132,25 @@ public class profile extends AppCompatActivity {
         });
     }
 
-    private void updateCustomer(String customerID,String name,String Address, String review, String suggestion){
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable @org.jetbrains.annotations.Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode==1)
+        {
+            Uri uri=data.getData();
+            imageView.setImageURI(uri);
+            btn.setText("Done");
+        }
+
+
+
+
+
+
+    }
+
+    private void updateCustomer(String customerID, String name, String Address, String review, String suggestion){
         HashMap customer = new HashMap();
         customer.put("customerID", customerID);
         customer.put("name", name);
