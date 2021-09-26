@@ -49,8 +49,7 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:1.1.0"
     implementation "androidx.cardview:cardview:1.0.0"
     implementation 'com.orhanobut:dialogplus:1.11@aar'
-
-
+    implementation 'com.google.firebase:firebase-auth:21.0.1'
 
 
     testImplementation 'junit:junit:4.+'
