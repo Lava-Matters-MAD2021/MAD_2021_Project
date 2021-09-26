@@ -16,7 +16,9 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class activity_login extends AppCompatActivity {
+public class activity_login_admin extends AppCompatActivity {
+
+    //call xml to java
 
 
         TextInputEditText etLoginEmail;
@@ -29,7 +31,7 @@ public class activity_login extends AppCompatActivity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_login);
+            setContentView(R.layout.activity_login_admin);
 
             etLoginEmail = findViewById(R.id.etLoginEmail);
             etLoginPassword = findViewById(R.id.etLoginPass);
@@ -42,6 +44,8 @@ public class activity_login extends AppCompatActivity {
             });
 
         }
+
+        //login with firebase
 
         private void loginUser(){
             String email = etLoginEmail.getText().toString();
@@ -58,10 +62,10 @@ public class activity_login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            Toast.makeText(activity_login.this, "User logged in successfully", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(activity_login.this, MainActivity.class));
+                            Toast.makeText(activity_login_admin.this, "User logged in successfully", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(activity_login_admin.this, MainActivity.class));
                         }else{
-                            Toast.makeText(activity_login.this, "Log in Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(activity_login_admin.this, "Log in Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
 
                     }
