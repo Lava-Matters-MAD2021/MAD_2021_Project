@@ -13,7 +13,7 @@
         <!-- <activity -->
         <!-- android:name=".addtocart" -->
         <!-- android:exported="true" /> -->
-        <activity android:name=".addtocart">
+        <activity android:name=".addreview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
