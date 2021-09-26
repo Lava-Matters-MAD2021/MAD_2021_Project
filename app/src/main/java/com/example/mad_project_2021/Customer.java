@@ -1,5 +1,5 @@
 package com.example.mad_project_2021;
-
+//declare attributes
 public class Customer {
     private String customerID;
     private String name;

@@ -26,6 +26,7 @@ public class TotalQuantity extends AppCompatActivity {
         onAdd();
     }
     private void onAdd(){
+        //calculate total quantity
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

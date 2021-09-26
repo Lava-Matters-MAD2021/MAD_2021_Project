@@ -1,5 +1,5 @@
 package com.example.mad_project_2021;
-
+//declare attributes
 public class Quantity {
     private Integer qty1;
     private Integer qty2;
