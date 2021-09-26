@@ -16,6 +16,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,6 +34,11 @@ public class profile extends AppCompatActivity {
     Button btn;
     ImageView imageView;
     int SELECT_IMAGE_CODE=1;
+    Button btnLogOut;
+    FirebaseAuth mAuth;
+
+
+
 
 
     @Override
@@ -40,9 +47,11 @@ public class profile extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
 
-
+        btnLogOut = findViewById(R.id.btnLogout);
         btn=findViewById(R.id.btn);
         imageView=findViewById(R.id.pickedImage);
+
+
 
         btn.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -52,9 +61,12 @@ public class profile extends AppCompatActivity {
                 intent.setAction(Intent.ACTION_GET_CONTENT);
                 startActivityForResult(Intent.createChooser(intent,"Title"),SELECT_IMAGE_CODE);
 
+
             }
 
         });
+
+
 
 
 
@@ -68,6 +80,14 @@ public class profile extends AppCompatActivity {
         btnshow = (Button) findViewById(R.id.btnshow);
         btnupdate = (Button) findViewById(R.id.btnupdate);
         btndelete = (Button) findViewById(R.id.btndelete);
+        btnLogOut = (Button) findViewById(R.id.btnLogout);
+        btnLogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(profile.this,activity_login.class));
+            }
+        });
 
 
         customer = new Customer();
@@ -86,6 +106,7 @@ public class profile extends AppCompatActivity {
             }
 
         });
+
 
 
 
@@ -188,6 +209,11 @@ public class profile extends AppCompatActivity {
                         }
                     }
                 });
+
+
+
+
+
 
             }
         });
