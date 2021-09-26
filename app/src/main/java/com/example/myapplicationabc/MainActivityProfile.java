@@ -9,7 +9,7 @@ import android.widget.Button;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivityProfile extends AppCompatActivity {
 
 
         Button btnLogOut;
@@ -18,14 +18,14 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
+            setContentView(R.layout.activity_mainactivityprofile);
 
             btnLogOut = findViewById(R.id.btnLogout);
             mAuth = FirebaseAuth.getInstance();
 
             btnLogOut.setOnClickListener(view ->{
                 mAuth.signOut();
-                startActivity(new Intent(MainActivity.this, activity_login.class));
+                startActivity(new Intent(MainActivityProfile.this, activity_login.class));
             });
 
         }
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             super.onStart();
             FirebaseUser user = mAuth.getCurrentUser();
             if (user == null){
-                startActivity(new Intent(MainActivity.this, activity_login.class));
+                startActivity(new Intent(MainActivityProfile.this, activity_login.class));
             }
         }
     }
