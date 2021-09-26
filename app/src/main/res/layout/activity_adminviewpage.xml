@@ -10,7 +10,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"
         android:layout_width="409dp"
-        android:layout_height="520dp"
+        android:layout_height="500dp"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
         android:layout_marginTop="1dp"
@@ -39,28 +39,12 @@
         android:id="@+id/imageView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="620dp"
+        android:layout_marginBottom="564dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/logo_3_removebg_preview" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="casual"
-        android:text="POPULAR BOOK LIST"
-        android:textColor="#000"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.163" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton4"
