@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "440835719907",
+    "project_id": "signin-mad",
+    "storage_bucket": "signin-mad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:440835719907:android:31fb79cdf286d6d1797bd6",
+        "android_client_info": {
+          "package_name": "com.example.myapplicationabc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "440835719907-vseags3dr4rcjrjbc3p5qhmm16g08snf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASXVhamtcH-oExkudOErPDiQGDbwRW_XY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "440835719907-vseags3dr4rcjrjbc3p5qhmm16g08snf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

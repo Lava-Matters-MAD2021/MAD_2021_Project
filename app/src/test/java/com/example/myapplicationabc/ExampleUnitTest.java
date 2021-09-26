@@ -1,4 +1,4 @@
-package com.example.mad_project_2021;
+package com.example.myapplicationabc;
 
 import org.junit.Test;
 
