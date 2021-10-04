@@ -23,7 +23,7 @@ public class activity_login_admin extends AppCompatActivity {
 
         TextInputEditText etLoginEmail;
         TextInputEditText etLoginPassword;
-        TextView tvRegisterHere;
+
         Button btnLogin;
 
         FirebaseAuth mAuth;
@@ -50,6 +50,8 @@ public class activity_login_admin extends AppCompatActivity {
         private void loginUser(){
             String email = etLoginEmail.getText().toString();
             String password = etLoginPassword.getText().toString();
+
+            //validation
 
             if (TextUtils.isEmpty(email)){
                 etLoginEmail.setError("Email cannot be empty");

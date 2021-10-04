@@ -57,6 +57,8 @@ public class adminviewpage extends AppCompatActivity {
         adapter.stopListening();
     }
 
+    //search function
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 

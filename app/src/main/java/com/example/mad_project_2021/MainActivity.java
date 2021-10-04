@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     //call buttons
 
-    ImageButton group_60,group_59;
+    ImageButton group_60,group_59,group_58;
     private Button logout;
 
     @Override
@@ -42,6 +42,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intentLoadNewActivity = new Intent(MainActivity.this, AddActivity.class);
+                startActivity(intentLoadNewActivity);
+            }
+        });
+
+        //link category page
+
+        group_58 = (ImageButton) findViewById(R.id.imageButton3);
+
+        group_58.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentLoadNewActivity = new Intent(MainActivity.this, CategoryAddActivity.class);
                 startActivity(intentLoadNewActivity);
             }
         });

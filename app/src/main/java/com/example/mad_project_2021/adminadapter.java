@@ -55,12 +55,12 @@ public class adminadapter extends FirebaseRecyclerAdapter<model,adminadapter.myv
             public void onClick(View v) {
                 final DialogPlus dialogPlus = DialogPlus.newDialog(holder.img.getContext())
                         .setContentHolder(new ViewHolder(R.layout.update_popup))
-                        .setExpanded(true,1550)
+                        .setExpanded(true,1700)
                         .create();
 
                 //dialogPlus.show();
 
-                //call to popup window to added data
+                //call to popup window to added data edit
 
                 View view = dialogPlus.getHolderView();
 
@@ -82,7 +82,7 @@ public class adminadapter extends FirebaseRecyclerAdapter<model,adminadapter.myv
 
                 dialogPlus.show();
 
-                //perform click operation in edit
+                //perform click operation in edit view data edit
 
                 btnUpdate.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -148,14 +148,18 @@ public class adminadapter extends FirebaseRecyclerAdapter<model,adminadapter.myv
 
     }
 
+    //xml file connect singlerow xml to view holder
+
     @NonNull
     @NotNull
     @Override
     public myviewholder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType)
     {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.admin_item,parent,false);//connect xml file
-        return new myviewholder(view);
+        return new myviewholder(view); // object return
     }
+
+    //connect admin item xml
 
     class myviewholder extends RecyclerView.ViewHolder
     {

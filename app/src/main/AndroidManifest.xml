@@ -11,13 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MAD_Project_2021">
-        <activity android:name=".AddActivity"></activity>
-        <activity android:name=".adminviewpage"></activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".CategoryAddActivity"></activity>
+        <activity android:name=".AddActivity" />
+        <activity android:name=".adminviewpage" />
+        <activity android:name=".MainActivity" />
         <activity
             android:name=".activity_login_admin"
-            android:label="@string/app_name"
-            >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
