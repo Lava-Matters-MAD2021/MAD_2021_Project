@@ -1,4 +1,6 @@
 <resources>
 
     <string name="app_name">My Application abc</string>
+    <string name="book1"><b>BLOOD KING</b></string>
+    <string name="book2"><b>Rs.2550.00</b></string>
 </resources>

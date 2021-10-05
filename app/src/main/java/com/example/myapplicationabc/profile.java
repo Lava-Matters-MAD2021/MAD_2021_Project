@@ -165,10 +165,6 @@ public class profile extends AppCompatActivity {
         }
 
 
-
-
-
-
     }
 
     private void updateCustomer(String customerID, String name, String Address, String review, String suggestion){
